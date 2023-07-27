@@ -13,11 +13,13 @@ export class LibrosService {
   }
 
   getLibros() {
-    return this.httpClient.get<Libro[]>("https://dael.pythonanywhere.com/api/libros");
+    return this.httpClient.get<Libro[]>("https://dael.pythonanywhere.com/api/libros/");
   }
-
+  createLibro(data:any){
+    return this.httpClient.post<any>("https://dael.pythonanywhere.com/api/libros/", data);
+  }
   getAutores() {
-    return this.httpClient.get<Autor[]>("https://dael.pythonanywhere.com/api/autores");
+    return this.httpClient.get<Autor[]>("https://dael.pythonanywhere.com/api/autores/");
   }
 
 }
