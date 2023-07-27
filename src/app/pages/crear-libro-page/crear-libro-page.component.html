@@ -1,14 +1,23 @@
 <h1>Crear libro</h1>
+<a routerLink="/admin/libros" title="Cancelar">
+    Cancelar
+  </a>
 <form (submit)="addLibro(titulo, ano_publicacion, precio, imagen, descripcion, stock, firmado, hay_envio_gratis, autor)">
-    <input type ="text" #titulo>
-    <input type ="text" #ano_publicacion>
-    <input type ="text" #precio>
-    <input type ="text" #imagen>
-    <input type ="text" #descripcion>
-    <input type ="text" #stock>
-    <input type ="text" #firmado>
-    <input type ="text" #hay_envio_gratis>
-    <input type ="text" #autor>
+    <input type ="text" placeholder="Titulo"  #titulo>
+    <input type ="number" placeholder="Año publicacion" #ano_publicacion>
+    <input type ="number" placeholder="Precio" #precio>
+    <input type ="text" placeholder="Imagen" #imagen>
+    <input type ="text" placeholder="Descripcion" #descripcion>
+    <input type ="number" placeholder="Stock" #stock>
+    <label>Firmado</label>
+    <input type ="checkbox" #firmado>
+    <label>Envio Gratis</label>
+    <input type ="checkbox" #hay_envio_gratis>
+    <label>Autor</label>
+    <select #autor>
+        <option *ngFor="let autor of autores"
+        value="{{ autor.id }}" >{{ autor.nombre }}</option>
+    </select>
     <button>Agregar</button>
 </form>
 
