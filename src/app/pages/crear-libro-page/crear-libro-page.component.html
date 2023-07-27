@@ -1,1 +1,14 @@
-<p>crear-libro-page works!</p>
+<h1>Crear libro</h1>
+<form (submit)="addLibro(titulo, ano_publicacion, precio, imagen, descripcion, stock, firmado, hay_envio_gratis, autor)">
+    <input type ="text" #titulo>
+    <input type ="text" #ano_publicacion>
+    <input type ="text" #precio>
+    <input type ="text" #imagen>
+    <input type ="text" #descripcion>
+    <input type ="text" #stock>
+    <input type ="text" #firmado>
+    <input type ="text" #hay_envio_gratis>
+    <input type ="text" #autor>
+    <button>Agregar</button>
+</form>
+
