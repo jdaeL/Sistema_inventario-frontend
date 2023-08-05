@@ -24,4 +24,7 @@ export class LibrosPageComponent {
       });
     }
     
+    eliminarLibro(id: any) {
+      console.log("id :]", id)
+    }
 }
