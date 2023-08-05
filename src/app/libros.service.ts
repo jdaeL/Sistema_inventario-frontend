@@ -30,4 +30,8 @@ export class LibrosService {
     return this.httpClient.patch<any>("https://dael.pythonanywhere.com/api/libros/" + id + "/" , data);
   }
 
+  eliminarLibro(id:string) {
+    return this.httpClient.delete<any>("https://dael.pythonanywhere.com/api/libros/" + id + "/");
+  }
+
 }
