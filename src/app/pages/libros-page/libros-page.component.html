@@ -41,8 +41,8 @@
                 <a routerLink="/admin/libros/{{ libro.id }}/editar" title="Edit">
                     Editar Libro
                   </a>
-                <button>
-
+                <button (click)="eliminarLibro(libro.id)">
+                    eliminar libro
                 </button>
 
             </td>
