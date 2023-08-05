@@ -22,4 +22,12 @@ export class LibrosService {
     return this.httpClient.get<Autor[]>("https://dael.pythonanywhere.com/api/autores/");
   }
 
+  getLibro(id:string) {
+    return this.httpClient.get<Libro>("https://dael.pythonanywhere.com/api/libros/" + id + "/");
+  }
+
+  editarLibro(id:string, data:any){
+    return this.httpClient.patch<any>("https://dael.pythonanywhere.com/api/libros/" + id + "/" , data);
+  }
+
 }

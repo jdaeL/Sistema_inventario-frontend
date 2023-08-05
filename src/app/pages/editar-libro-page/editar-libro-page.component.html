@@ -1,1 +1,24 @@
-<p>editar-libro-page works!</p>
+<h1>Editar libro</h1>
+<a routerLink="/admin/libros" title="Cancelar">
+    Cancelar
+  </a>
+<form (submit)="editarLibro(titulo, ano_publicacion, precio, imagen, descripcion, stock, firmado, hay_envio_gratis, autor)">
+    <input type ="text" placeholder="Titulo" value="{{ libro.titulo }}" #titulo>
+    <input type ="number" placeholder="Año publicacion" value="{{ libro.ano_publicacion }}" #ano_publicacion>
+    <input type ="number" placeholder="Precio" value="{{ libro.precio }}" #precio>
+    <input type ="text" placeholder="Imagen" value="{{ libro.imagen }}" #imagen>
+    <input type ="text" placeholder="Descripcion" value="{{ libro.descripcion }}" #descripcion>
+    <input type ="number" placeholder="Stock" value="{{ libro.stock }}" #stock>
+    <label>Firmado</label>
+    <input type ="checkbox" checked="{{ libro.firmado }}"  #firmado>
+    <label>Envio Gratis</label>
+    <input type ="checkbox" checked="{{ libro.hay_envio_gratis }}" #hay_envio_gratis>
+    <label>Autor</label>
+    <select value="{{ libro.autor }}" #autor>
+        <option *ngFor="let autor of autores"
+        value="{{ autor.id }}" >{{ autor.nombre }}</option>
+    </select>
+    <button>Editar</button>
+</form>
+
+
