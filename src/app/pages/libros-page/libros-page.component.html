@@ -16,6 +16,7 @@
             <th scope="col">Firmado</th>
             <th scope="col">Envío Gratis</th>
             <th scope="col">Autor</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -36,6 +37,15 @@
             <td>{{ libro.firmado }}</td>
             <td>{{ libro.hay_envio_gratis }}</td>
             <td>{{ libro.autor }}</td>
+            <td>
+                <a routerLink="/admin/libros/{{ libro.id }}/editar" title="Edit">
+                    Editar Libro
+                  </a>
+                <button>
+
+                </button>
+
+            </td>
         </tr>
     </tbody>
 </table>
