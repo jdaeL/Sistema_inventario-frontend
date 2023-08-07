@@ -24,4 +24,9 @@ export class LibrosPageComponent {
       });
     }
     
+    eliminarLibro(id: string) {
+      this.librosService.eliminarLibro(id).subscribe(()=>{
+        this.libros=this.libros.filter(libro => libro.id !== id) 
+      })
+    }
 }
