@@ -1,24 +1,50 @@
-<h1>Editar libro</h1>
-<a routerLink="/admin/libros" title="Cancelar">
-    Cancelar
-  </a>
-<form (submit)="editarLibro(titulo, ano_publicacion, precio, imagen, descripcion, stock, firmado, hay_envio_gratis, autor)">
-    <input type ="text" placeholder="Titulo" value="{{ libro.titulo }}" #titulo>
-    <input type ="number" placeholder="Año publicacion" value="{{ libro.ano_publicacion }}" #ano_publicacion>
-    <input type ="number" placeholder="Precio" value="{{ libro.precio }}" #precio>
-    <input type ="text" placeholder="Imagen" value="{{ libro.imagen }}" #imagen>
-    <input type ="text" placeholder="Descripcion" value="{{ libro.descripcion }}" #descripcion>
-    <input type ="number" placeholder="Stock" value="{{ libro.stock }}" #stock>
-    <label>Firmado</label>
-    <input type ="checkbox" checked="{{ libro.firmado }}"  #firmado>
-    <label>Envio Gratis</label>
-    <input type ="checkbox" checked="{{ libro.hay_envio_gratis }}" #hay_envio_gratis>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <h1 class="text-white">Editar libro</h1>
+      </a>
+    </div>
+  </nav>
+
+<a routerLink="/admin/libros" class="btn btn-secondary" title="Cancelar">
+  Cancelar
+</a>
+
+<form (submit)="editarLibro(titulo.value, ano_publicacion.value, precio.value, imagen.value, descripcion.value, stock.value, firmado.checked, hay_envio_gratis.checked, autor.value)">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Titulo" value="{{ libro.titulo }}" #titulo>
+  </div>
+  <div class="form-group">
+    <input type="number" class="form-control" placeholder="Año publicacion" value="{{ libro.ano_publicacion }}" #ano_publicacion>
+  </div>
+  <div class="form-group">
+    <input type="number" class="form-control" placeholder="Precio" value="{{ libro.precio }}" #precio>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Imagen" value="{{ libro.imagen }}" #imagen>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Descripcion" value="{{ libro.descripcion }}" #descripcion>
+  </div>
+  <div class="form-group">
+    <input type="number" class="form-control" placeholder="Stock" value="{{ libro.stock }}" #stock>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" checked="{{ libro.firmado }}" #firmado>
+    <label class="form-check-label">Firmado</label>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" checked="{{ libro.hay_envio_gratis }}" #hay_envio_gratis>
+    <label class="form-check-label">Envío Gratis</label>
+  </div>
+  <div class="form-group">
     <label>Autor</label>
-    <select value="{{ libro.autor }}" #autor>
-        <option *ngFor="let autor of autores"
-        value="{{ autor.id }}" >{{ autor.nombre }}</option>
+    <select class="form-control" value="{{ libro.autor }}" #autor>
+      <option *ngFor="let autor of autores" [value]="autor.id">{{ autor.nombre }}</option>
     </select>
-    <button>Editar</button>
+  </div>
+  <button type="submit" class="btn btn-primary">Editar</button>
 </form>
 
-
+<!-- Add Bootstrap JS (Optional, but needed for some components like modals) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
