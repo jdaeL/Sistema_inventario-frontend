@@ -59,17 +59,21 @@
             </td>
             <td>{{ libro.descripcion }}</td>
             <td>{{ libro.stock }}</td>
-            <td>{{ libro.firmado }}</td>
-            <td>{{ libro.hay_envio_gratis }}</td>
+            <td>
+              <input type="checkbox" [checked]="libro.firmado" disabled class="form-check-input"/>
+            </td>
+            <td>
+              <input type="checkbox" [checked]="libro.hay_envio_gratis" disabled class="form-check-input"/>
+            </td>
             <td>{{ libro.autor }}</td>
             <td>
                 <a routerLink="/admin/libros/{{ libro.id }}/editar" title="Edit">
                     <button class="btn btn-primary">
-                        Editar Libro
+                      <i class="bi bi-pencil-square"></i>
                     </button>
                   </a>
                 <button (click)="eliminarLibro(libro.id)" button class="btn btn-danger">
-                    eliminar libro
+                    <i class="bi bi-calendar-x-fill"></i>
                 </button>
 
             </td>

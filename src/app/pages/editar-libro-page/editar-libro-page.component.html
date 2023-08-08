@@ -10,7 +10,7 @@
   Cancelar
 </a>
 
-<form (submit)="editarLibro(titulo.value, ano_publicacion.value, precio.value, imagen.value, descripcion.value, stock.value, firmado.checked, hay_envio_gratis.checked, autor.value)">
+<form (submit)="editarLibro(titulo, ano_publicacion, precio, imagen, descripcion, stock, firmado, hay_envio_gratis, autor)">
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Titulo" value="{{ libro.titulo }}" #titulo>
   </div>
@@ -30,11 +30,11 @@
     <input type="number" class="form-control" placeholder="Stock" value="{{ libro.stock }}" #stock>
   </div>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" checked="{{ libro.firmado }}" #firmado>
+    <input type="checkbox" class="form-check-input" [checked]="libro.firmado" #firmado>
     <label class="form-check-label">Firmado</label>
   </div>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" checked="{{ libro.hay_envio_gratis }}" #hay_envio_gratis>
+    <input type="checkbox" class="form-check-input" [checked]="libro.hay_envio_gratis" #hay_envio_gratis>
     <label class="form-check-label">Envío Gratis</label>
   </div>
   <div class="form-group">
