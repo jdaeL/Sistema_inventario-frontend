@@ -1,0 +1,16 @@
+button {
+    margin: 5px
+}
+
+* {
+    font-family: 'Old Standard TT', serif;
+}
+
+h1 {
+    font-style: italic;
+}
+
+.logo {
+    width: 50px;
+    border-radius: 3px;
+}
