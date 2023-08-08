@@ -1,4 +1,38 @@
-<a routerLink="/admin/libros" class="btn btn-secondary" title="Cancelar">
-    Regresar
-</a>
-<pre>{{ libro | json }}</pre>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4">
+            <img src="{{ libro.imagen }}" alt="{{ libro.titulo }}"
+                class="img-thumbnail animate_animated animate_fadeInLeft" />
+        </div>
+        <div class="col-8">
+            <h3>{{ libro.titulo }}</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <b>Año publicación:</b> {{ libro.ano_publicacion }}
+                </li>
+                <li class="list-group-item">
+                    <b>Precio:</b> {{ libro.precio }}
+                </li>
+                <li class="list-group-item">
+                    <b>Descripción:</b> {{ libro.descripcion }}
+                </li>
+                <li class="list-group-item">
+                    <b>Stock:</b> {{ libro.stock }}
+                </li>
+                <li class="list-group-item">
+                    <b>Firmado:</b> <input type="checkbox" [checked]="libro.firmado" disabled class="form-check-input"/>
+                </li>
+                <li class="list-group-item">
+                    <b>Hay envío gratis:</b> <input type="checkbox" [checked]="libro.hay_envio_gratis" disabled class="form-check-input"/>
+                </li>
+                <li class="list-group-item">
+                    <b>Autor:</b> {{ libro.autor }}
+                </li>
+                <a routerLink="/admin/libros" class="btn btn-outline-primary" title="Cancelar">
+                    Regresar
+                </a>
+            </ul>
+        </div>
+                  
+    </div>
+</div>
