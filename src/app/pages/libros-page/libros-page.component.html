@@ -67,14 +67,20 @@
             </td>
             <td>{{ libro.autor }}</td>
             <td>
+              <a routerLink="/admin/libros/{{ libro.id }}/" title="view">
+                <button class="btn btn-primary">
+                  <i class="bi bi-eye-fill"></i>
+                </button>
+              </a>
                 <a routerLink="/admin/libros/{{ libro.id }}/editar" title="Edit">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-warning">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                   </a>
                 <button (click)="eliminarLibro(libro.id)" button class="btn btn-danger">
                     <i class="bi bi-calendar-x-fill"></i>
                 </button>
+
 
             </td>
         </tr>

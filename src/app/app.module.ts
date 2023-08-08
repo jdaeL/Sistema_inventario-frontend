@@ -8,6 +8,7 @@ import { CrearLibroPageComponent } from './pages/crear-libro-page/crear-libro-pa
 import { EditarLibroPageComponent } from './pages/editar-libro-page/editar-libro-page.component';
 import { EliminarLibroPageComponent } from './pages/eliminar-libro-page/eliminar-libro-page.component';
 import { LibrosService } from './libros.service';
+import { LibroDetallePageComponent } from './pages/libro-detalle-page/libro-detalle-page.component';
 
 const routes: Route[] = [
   {
@@ -18,7 +19,8 @@ const routes: Route[] = [
   { path: 'admin/libros', component: LibrosPageComponent },
   { path: 'admin/libros/crear', component: CrearLibroPageComponent },
   { path: 'admin/libros/:id/editar', component: EditarLibroPageComponent },
-  { path: 'admin/libros/:id/eliminar', component: EliminarLibroPageComponent }
+  { path: 'admin/libros/:id/eliminar', component: EliminarLibroPageComponent },
+  { path: 'admin/libros/:id', component: LibroDetallePageComponent }
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const routes: Route[] = [
     LibrosPageComponent,
     CrearLibroPageComponent,
     EditarLibroPageComponent,
-    EliminarLibroPageComponent
+    EliminarLibroPageComponent,
+    LibroDetallePageComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes), HttpClientModule
