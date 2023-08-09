@@ -16,10 +16,10 @@
       <input type="text" class="form-control" placeholder="Titulo" #titulo>
     </div>
     <div class="form-group">
-      <input type="number" class="form-control" placeholder="Año publicacion" #ano_publicacion>
+      <input type="number" class="form-control" placeholder="Año publicacion" max="2023" #ano_publicacion>
     </div>
     <div class="form-group">
-      <input type="number" class="form-control" placeholder="Precio" #precio>
+      <input type="number" class="form-control" placeholder="Precio" min= "1" #precio>
     </div>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Imagen" #imagen>
@@ -28,7 +28,7 @@
       <input type="text" class="form-control" placeholder="Descripcion" #descripcion>
     </div>
     <div class="form-group">
-      <input type="number" class="form-control" placeholder="Stock" #stock>
+      <input type="number" class="form-control" placeholder="Stock" min= "0" #stock>
     </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" #firmado>

@@ -16,10 +16,10 @@
       <input type="text" class="form-control" placeholder="Titulo" value="{{ libro.titulo }}" #titulo>
     </div>
     <div class="form-group">
-      <input type="number" class="form-control" placeholder="Año publicacion" value="{{ libro.ano_publicacion }}" #ano_publicacion>
+      <input type="number" class="form-control" placeholder="Año publicacion" value="{{ libro.ano_publicacion }}" max= "2023" #ano_publicacion>
     </div>
     <div class="form-group">
-      <input type="number" class="form-control" placeholder="Precio" value="{{ libro.precio }}" #precio>
+      <input type="number" class="form-control" placeholder="Precio" value="{{ libro.precio }}" min= "1" #precio>
     </div>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Imagen" value="{{ libro.imagen }}" #imagen>
